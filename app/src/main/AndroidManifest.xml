@@ -40,6 +40,24 @@
             android:value="portrait|landscape" />
 
 
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="com.funs.eye.util.UmengInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5ee21dfcdbc2ec078743b1f3" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="opensource" />
+
+
     </application>
 
 </manifest>
