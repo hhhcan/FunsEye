@@ -9,4 +9,9 @@
         <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 
+    <style name="FunsEye.SplashActivity">
+        <item name="android:windowBackground">@drawable/bg_splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
