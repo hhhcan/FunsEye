@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.funs.eye.databinding.FragmentRefreshLayoutBinding
 import com.funs.eye.ui.common.ui.BaseFragment
 
@@ -14,6 +15,9 @@ class CommendFragment : BaseFragment() {
     private val binding
         get() = _binding!!
 
+    private val viewModel by lazy {
+        ViewModelProvider.NewInstanceFactory().create(CommendViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
