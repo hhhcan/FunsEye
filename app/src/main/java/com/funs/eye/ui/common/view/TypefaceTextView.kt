@@ -10,8 +10,6 @@ import com.funs.eye.util.TypeFaceUtil
 /**
  * 带有自定义字体TextView。
  *
- * @author vipyinzhiwei
- * @since  2020/5/24
  */
 class TypefaceTextView : AppCompatTextView {
 
