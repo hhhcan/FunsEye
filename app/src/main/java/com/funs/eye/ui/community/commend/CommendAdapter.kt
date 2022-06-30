@@ -22,20 +22,21 @@ import com.zhpan.bannerview.BaseBannerAdapter
 import com.zhpan.bannerview.BaseViewHolder
 import de.hdodenhof.circleimageview.CircleImageView
 import com.funs.eye.BuildConfig
+import com.funs.eye.ui.community.commend.detail.UgcDetailActivity
 import com.funs.eye.util.ActionUrlUtil
 import com.funs.eye.util.GlobalUtil
 
-class CommendAdapter(val fragment: CommendFragment) :
+class CommendAdapter(private val fragment: CommendFragment) :
     PagingDataAdapter<CommunityRecommend.Item, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
 
     companion object {
         const val TAG = "CommendAdapter"
 
-        const val STR_HORIZONTAL_SCROLLCARD_TYPE = "horizontalScrollCard"
+        const val STR_HORIZONTAL_SCROLL_CARD_TYPE = "horizontalScrollCard"
         const val STR_COMMUNITY_COLUMNS_CARD = "communityColumnsCard"
 
-        const val STR_HORIZONTAL_SCROLLCARD_DATA_TYPE = "HorizontalScrollCard"
+        const val STR_HORIZONTAL_SCROLL_CARD_DATA_TYPE = "HorizontalScrollCard"
         const val STR_ITEM_COLLECTION_DATA_TYPE = "ItemCollection"
         const val STR_FOLLOW_CARD_DATA_TYPE = "FollowCard"
 
@@ -45,8 +46,8 @@ class CommendAdapter(val fragment: CommendFragment) :
         const val DAILY_LIBRARY_TYPE = "DAILY"
 
         const val UNKNOWN = -1  //未知类型，使用EmptyViewHolder容错处理。
-        const val HORIZONTAL_SCROLLCARD_ITEM_COLLECTION_TYPE = 1
-        const val HORIZONTAL_SCROLLCARD_TYPE = 2
+        const val HORIZONTAL_SCROLL_CARD_ITEM_COLLECTION_TYPE = 1
+        const val HORIZONTAL_SCROLL_CARD_TYPE = 2
         const val FOLLOW_CARD_TYPE = 3
 
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<CommunityRecommend.Item>() {
@@ -70,11 +71,11 @@ class CommendAdapter(val fragment: CommendFragment) :
     override fun getItemViewType(position: Int): Int {
         val item = getItem(position)
         return when (item?.type) {
-            STR_HORIZONTAL_SCROLLCARD_TYPE -> {
+            STR_HORIZONTAL_SCROLL_CARD_TYPE -> {
                 when (item.data.dataType) {
                     STR_ITEM_COLLECTION_DATA_TYPE ->
-                        HORIZONTAL_SCROLLCARD_ITEM_COLLECTION_TYPE
-                    STR_HORIZONTAL_SCROLLCARD_DATA_TYPE -> HORIZONTAL_SCROLLCARD_TYPE
+                        HORIZONTAL_SCROLL_CARD_ITEM_COLLECTION_TYPE
+                    STR_HORIZONTAL_SCROLL_CARD_DATA_TYPE -> HORIZONTAL_SCROLL_CARD_TYPE
                     else -> UNKNOWN
                 }
             }
@@ -168,7 +169,7 @@ class CommendAdapter(val fragment: CommendFragment) :
                         holder.itemView.setOnClickListener {
                             val items =
                                 snapshot().filter { it!!.type == STR_COMMUNITY_COLUMNS_CARD && it.data.dataType == STR_FOLLOW_CARD_DATA_TYPE }
-//                            UgcDetailActivity.start(fragment.activity, items.map { it!! }, item)
+                            UgcDetailActivity.start(fragment.activity, items.map { it!! }, item)
                         }
                     }
                     STR_UGC_PICTURE_TYPE -> {
@@ -176,7 +177,7 @@ class CommendAdapter(val fragment: CommendFragment) :
                         holder.itemView.setOnClickListener {
                             val items =
                                 snapshot().filter { it!!.type == STR_COMMUNITY_COLUMNS_CARD && it.data.dataType == STR_FOLLOW_CARD_DATA_TYPE }
-//                            UgcDetailActivity.start(fragment.activity, items.map { it!! }, item)
+                            UgcDetailActivity.start(fragment.activity, items.map { it!! }, item)
                         }
                     }
                     else -> {
@@ -193,14 +194,14 @@ class CommendAdapter(val fragment: CommendFragment) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
-            HORIZONTAL_SCROLLCARD_ITEM_COLLECTION_TYPE -> {
+            HORIZONTAL_SCROLL_CARD_ITEM_COLLECTION_TYPE -> {
                 HorizontalScrollcardItemCollectionViewHolder(
                     R.layout.item_community_horizontal_scrollcard_item_collection_type.inflate(
                         parent
                     )
                 )
             }
-            HORIZONTAL_SCROLLCARD_TYPE -> {
+            HORIZONTAL_SCROLL_CARD_TYPE -> {
                 HorizontalScrollcardViewHolder(
                     R.layout.item_community_horizontal_scrollcard_type.inflate(
                         parent
@@ -225,7 +226,7 @@ class CommendAdapter(val fragment: CommendFragment) :
     }
 
     inner class HorizontalScrollcardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val bannerViewPager =
+        val bannerViewPager: BannerViewPager<CommunityRecommend.ItemX, BannerAdapter.ViewHolder> =
             view.findViewById<BannerViewPager<CommunityRecommend.ItemX, BannerAdapter.ViewHolder>>(R.id.bannerViewPager)
     }
 
