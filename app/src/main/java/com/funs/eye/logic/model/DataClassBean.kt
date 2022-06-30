@@ -2,6 +2,7 @@ package com.funs.eye.logic.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
 @Parcelize
 data class Cover(
@@ -41,3 +42,34 @@ data class Tag(
 )
 
 data class Label(val actionUrl: String?, val text: String?, val card: String, val detail: Any?)
+
+
+@Parcelize
+data class Author(
+    val adTrack: @RawValue Any?,
+    val approvedNotReadyVideoCount: Int,
+    val description: String,
+    val expert: Boolean,
+    val follow: Follow,
+    val icon: String?,
+    val id: Int,
+    val ifPgc: Boolean,
+    val latestReleaseTime: Long,
+    val link: String,
+    val name: String,
+    val recSort: Int,
+    val shield: Shield,
+    val videoNum: Int
+) : Parcelable {
+
+    @Parcelize
+    data class Follow(val followed: Boolean, val itemId: Int, val itemType: String) : Parcelable
+
+    @Parcelize
+    data class Shield(val itemId: Int, val itemType: String, val shielded: Boolean) : Parcelable
+}
+
+@Parcelize
+data class WebUrl(val forWeibo: String, val raw: String) : Parcelable
+
+data class Provider(val alias: String, val icon: String, val name: String)

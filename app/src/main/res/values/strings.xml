@@ -106,7 +106,6 @@
     <string name="user_service_agreement">用户服务协议</string>
     <string name="guide_login_tips_two">登录后即可查看评论回复、点赞及关注等通知信息</string>
     <string name="guide_login_tips_three">别错过重要的信息</string>
-    <string name="guide_login_tips_four">点击登录后可关注主题和作者</string>
 
     <!-- 搜索 -->
     <string name="hot_keywords">热搜关键词</string>

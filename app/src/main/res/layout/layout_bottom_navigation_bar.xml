@@ -40,7 +40,7 @@
         android:padding="2dp"
         android:src="@drawable/sel_btn_community"
         app:layout_constraintBottom_toTopOf="@id/tvCommunity"
-        app:layout_constraintEnd_toStartOf="@id/ivRelease"
+        app:layout_constraintEnd_toStartOf="@id/ivNotification"
         app:layout_constraintStart_toEndOf="@id/ivHomePage"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,15 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivCommunity"
         app:typeface="fzlLTypeface" />
 
-    <ImageView
-        android:id="@+id/ivRelease"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/btn_release_normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/ivNotification"
-        app:layout_constraintStart_toEndOf="@id/ivCommunity"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/ivNotification"
@@ -77,7 +69,7 @@
         android:src="@drawable/sel_btn_notification"
         app:layout_constraintBottom_toTopOf="@id/tvNotification"
         app:layout_constraintEnd_toStartOf="@id/ivMine"
-        app:layout_constraintStart_toEndOf="@id/ivRelease"
+        app:layout_constraintStart_toEndOf="@id/ivCommunity"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.funs.eye.ui.common.view.TypefaceTextView

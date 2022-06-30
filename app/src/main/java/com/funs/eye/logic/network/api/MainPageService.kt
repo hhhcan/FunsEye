@@ -1,6 +1,7 @@
 package com.funs.eye.logic.network.api
 
 import com.funs.eye.logic.model.CommunityRecommend
+import com.funs.eye.logic.model.Follow
 import com.funs.eye.logic.network.ServiceCreator
 import retrofit2.http.GET
 import retrofit2.http.Url
@@ -18,6 +19,12 @@ interface MainPageService {
     @GET
     suspend fun getCommunityRecommend(@Url url: String): CommunityRecommend
 
+    /**
+     * 社区-关注列表
+     */
+    @GET
+    suspend fun gethFollow(@Url url: String): Follow
+
 
     companion object {
 
@@ -25,6 +32,11 @@ interface MainPageService {
          * 社区-推荐列表
          */
         const val COMMUNITY_RECOMMEND_URL = "${ServiceCreator.BASE_URL}api/v7/community/tab/rec"
+
+        /**
+         * 社区-关注列表
+         */
+        const val FOLLOW_URL = "${ServiceCreator.BASE_URL}api/v6/community/tab/follow"
 
     }
 
