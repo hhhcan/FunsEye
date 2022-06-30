@@ -1,6 +1,7 @@
 package com.funs.eye.logic.network
 
 import com.funs.eye.logic.network.api.MainPageService
+import com.funs.eye.logic.network.api.VideoService
 
 /**
  * 管理所有网络请求。
@@ -11,6 +12,17 @@ class FunsEyeNetwork {
 
     var mainPageService = ServiceCreator.create(MainPageService::class.java)
         private set
+
+    private val videoService = ServiceCreator.create(VideoService::class.java)
+
+    suspend fun fetchHotSearch() = mainPageService.getHotSearch()
+
+    suspend fun fetchVideoBeanForClient(videoId: Long) = videoService.getVideoBeanForClient(videoId)
+
+    suspend fun fetchVideoRelated(videoId: Long) = videoService.getVideoRelated(videoId)
+
+    suspend fun fetchVideoReplies(url: String) = videoService.getVideoReplies(url)
+
 
     companion object {
 

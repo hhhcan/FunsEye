@@ -25,6 +25,12 @@ interface MainPageService {
     @GET
     suspend fun gethFollow(@Url url: String): Follow
 
+    /**
+     * 搜索-热搜关键词
+     */
+    @GET("api/v3/queries/hot")
+    suspend fun getHotSearch(): List<String>
+
 
     companion object {
 

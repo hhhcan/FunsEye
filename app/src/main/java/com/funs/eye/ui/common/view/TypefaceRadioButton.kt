@@ -10,8 +10,6 @@ import com.funs.eye.R
 /**
  * 带有自定义字体RadioButton。
  *
- * @author vipyinzhiwei
- * @since  2020/5/24
  */
 class TypefaceRadioButton : AppCompatRadioButton {
 

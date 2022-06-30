@@ -9,8 +9,6 @@ import com.funs.eye.extension.dp2px
 /**
  * 网格列表，实现相等内间距空隙，四周不留空隙。
  *
- * @author vipyinzhiwei
- * @since  2020/5/11
  */
 class GridListItemDecoration(private val spanCount: Int = 2, private val space: Float = 2f) : RecyclerView.ItemDecoration() {
 

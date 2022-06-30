@@ -14,6 +14,7 @@ import com.funs.eye.R
 import com.funs.eye.extension.*
 import com.funs.eye.logic.model.Follow
 import com.funs.eye.ui.common.holder.EmptyViewHolder
+import com.funs.eye.ui.newdetail.NewDetailActivity
 import com.funs.eye.util.DateUtil
 import com.funs.eye.util.GlobalUtil
 import com.shuyu.gsyvideoplayer.GSYVideoManager
@@ -80,21 +81,21 @@ class FollowAdapter(private val fragment: FollowFragment) :
                             override fun onClickBlank(url: String?, vararg objects: Any?) {
                                 super.onClickBlank(url, *objects)
                                 holder.tvVideoDuration.visible()
-//                                NewDetailActivity.start(
-//                                    fragment.activity,
-//                                    NewDetailActivity.VideoInfo(
-//                                        id,
-//                                        playUrl,
-//                                        title,
-//                                        description,
-//                                        category,
-//                                        library,
-//                                        consumption,
-//                                        cover,
-//                                        author!!,
-//                                        webUrl
-//                                    )
-//                                )
+                                NewDetailActivity.start(
+                                    fragment.activity,
+                                    NewDetailActivity.VideoInfo(
+                                        id,
+                                        playUrl,
+                                        title,
+                                        description,
+                                        category,
+                                        library,
+                                        consumption,
+                                        cover,
+                                        author!!,
+                                        webUrl
+                                    )
+                                )
                             }
                         })
                     holder.let {
@@ -110,20 +111,20 @@ class FollowAdapter(private val fragment: FollowFragment) :
                         {
                             when (this) {
                                 it.videoPlayer.thumbImageView, it.itemView -> {
-//                                    NewDetailActivity.start(
-//                                        fragment.activity, NewDetailActivity.VideoInfo(
-//                                            item.data.content.data.id,
-//                                            playUrl,
-//                                            title,
-//                                            description,
-//                                            category,
-//                                            library,
-//                                            consumption,
-//                                            cover,
-//                                            author!!,
-//                                            webUrl
-//                                        )
-//                                    )
+                                    NewDetailActivity.start(
+                                        fragment.activity, NewDetailActivity.VideoInfo(
+                                            item.data.content.data.id,
+                                            playUrl,
+                                            title,
+                                            description,
+                                            category,
+                                            library,
+                                            consumption,
+                                            cover,
+                                            author!!,
+                                            webUrl
+                                        )
+                                    )
                                 }
                                 it.ivCollectionCount, it.tvCollectionCount, it.ivFavorites, it.tvFavorites -> {
 //                                    LoginActivity.start(fragment.activity)

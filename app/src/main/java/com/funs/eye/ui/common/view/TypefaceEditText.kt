@@ -10,8 +10,6 @@ import com.funs.eye.R
 /**
  * 带有自定义字体EditText。
  *
- * @author vipyinzhiwei
- * @since  2020/5/24
  */
 class TypefaceEditText : AppCompatEditText {
 
