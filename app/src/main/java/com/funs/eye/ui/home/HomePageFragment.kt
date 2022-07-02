@@ -19,8 +19,7 @@ import com.funs.eye.util.GlobalUtil
 import org.greenrobot.eventbus.EventBus
 
 /**
- * 首页主界面。
- *
+ * 首页主界面
  */
 class HomePageFragment : BaseViewPagerFragment() {
 
@@ -34,16 +33,21 @@ class HomePageFragment : BaseViewPagerFragment() {
         add(TabEntity(GlobalUtil.getString(R.string.daily)))
     }
 
-    override val createFragments: Array<Fragment> = arrayOf(DiscoveryFragment.newInstance(), DailyFragment.newInstance())
+    override val createFragments: Array<Fragment> =
+        arrayOf(DiscoveryFragment.newInstance(), DailyFragment.newInstance())
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentMainContainerBinding.inflate(layoutInflater, container, false)
         return super.onCreateView(binding.root)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewPager?.currentItem = 1
+        viewPager?.currentItem = 0
     }
 
     override fun onDestroyView() {

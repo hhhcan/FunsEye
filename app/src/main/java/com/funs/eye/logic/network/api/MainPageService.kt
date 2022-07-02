@@ -1,6 +1,8 @@
 package com.funs.eye.logic.network.api
 
 import com.funs.eye.logic.model.CommunityRecommend
+import com.funs.eye.logic.model.Daily
+import com.funs.eye.logic.model.Discovery
 import com.funs.eye.logic.model.Follow
 import com.funs.eye.logic.network.ServiceCreator
 import retrofit2.http.GET
@@ -12,6 +14,18 @@ import retrofit2.http.Url
  * @author can
  */
 interface MainPageService {
+
+    /**
+     * 首页-发现列表
+     */
+    @GET
+    suspend fun getDiscovery(@Url url: String): Discovery
+
+    /**
+     * 首页-日报列表
+     */
+    @GET
+    suspend fun getDaily(@Url url: String): Daily
 
     /**
      * 社区-推荐列表
@@ -33,6 +47,16 @@ interface MainPageService {
 
 
     companion object {
+
+        /**
+         * 首页-发现列表
+         */
+        const val DISCOVERY_URL = "${ServiceCreator.BASE_URL}api/v7/index/tab/discovery"
+
+        /**
+         * 首页-日报列表
+         */
+        const val DAILY_URL = "${ServiceCreator.BASE_URL}api/v5/index/tab/feed"
 
         /**
          * 社区-推荐列表

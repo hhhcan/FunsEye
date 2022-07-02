@@ -5,8 +5,10 @@ import android.app.Activity
 import com.funs.eye.Const
 import com.funs.eye.R
 import com.funs.eye.event.RefreshEvent
+import com.funs.eye.event.SwitchPagesEvent
 import com.funs.eye.extension.showToast
 import com.funs.eye.ui.common.ui.BaseFragment
+import com.funs.eye.ui.home.daily.DailyFragment
 import org.greenrobot.eventbus.EventBus
 import java.net.URLDecoder
 
@@ -48,7 +50,7 @@ object ActionUrlUtil {
                 "${toastTitle},${GlobalUtil.getString(R.string.currently_not_supported)}".showToast()
             }
             decodeUrl.startsWith(Const.ActionUrl.HP_SEL_TAB_TWO_NEWTAB_MINUS_THREE) -> {
-//                EventBus.getDefault().post(SwitchPagesEvent(DailyFragment::class.java))
+                EventBus.getDefault().post(SwitchPagesEvent(DailyFragment::class.java))
             }
             decodeUrl.startsWith(Const.ActionUrl.CM_TAGSQUARE_TAB_ZERO) -> {
                 "${toastTitle},${GlobalUtil.getString(R.string.currently_not_supported)}".showToast()

@@ -105,6 +105,9 @@ class MainActivity : BaseActivity() {
 
     private fun notificationUiRefresh(selectionIndex: Int) {
         when (selectionIndex) {
+            0 -> {
+                if (binding.navigationBar.ivHomePage.isSelected) EventBus.getDefault().post(RefreshEvent(HomePageFragment::class.java))
+            }
             1 -> {
                 if (binding.navigationBar.ivCommunity.isSelected)
                     EventBus.getDefault().post(RefreshEvent(CommunityFragment::class.java)
