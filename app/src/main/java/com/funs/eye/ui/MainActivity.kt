@@ -11,6 +11,7 @@ import com.funs.eye.extension.showToast
 import com.funs.eye.ui.common.ui.BaseActivity
 import com.funs.eye.ui.community.CommunityFragment
 import com.funs.eye.ui.home.HomePageFragment
+import com.funs.eye.ui.notification.NotificationFragment
 import com.funs.eye.util.GlobalUtil
 import org.greenrobot.eventbus.EventBus
 
@@ -27,6 +28,8 @@ class MainActivity : BaseActivity() {
 
     private var communityFragment: CommunityFragment? = null
 
+    private var notificationFragment: NotificationFragment? = null
+
     private val fragmentManager: FragmentManager by lazy { supportFragmentManager }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +44,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupViews() {
-        setOnClickListener(binding.navigationBar.btnHomePage,binding.navigationBar.btnCommunity) {
+        setOnClickListener(binding.navigationBar.btnHomePage,binding.navigationBar.btnCommunity,binding.navigationBar.btnNotification) {
             when (this) {
                 binding.navigationBar.btnHomePage->{
                     notificationUiRefresh(0)
@@ -50,6 +53,10 @@ class MainActivity : BaseActivity() {
                 binding.navigationBar.btnCommunity -> {
                     notificationUiRefresh(1)
                     setTabSelection(1)
+                }
+                binding.navigationBar.btnNotification -> {
+                    notificationUiRefresh(2)
+                    setTabSelection(2)
                 }
             }
         }
@@ -81,6 +88,17 @@ class MainActivity : BaseActivity() {
                         show(communityFragment!!)
                     }
                 }
+
+                2 -> {
+                    binding.navigationBar.ivNotification.isSelected = true
+                    binding.navigationBar.tvNotification.isSelected = true
+                    if (notificationFragment == null) {
+                        notificationFragment = NotificationFragment()
+                        add(R.id.homeActivityFragContainer, notificationFragment!!)
+                    } else {
+                        show(notificationFragment!!)
+                    }
+                }
             }
         }.commitAllowingStateLoss()
     }
@@ -100,6 +118,7 @@ class MainActivity : BaseActivity() {
         transaction.run {
             if (homePageFragment != null) hide(homePageFragment!!)
             if (communityFragment != null) hide(communityFragment!!)
+            if (notificationFragment != null) hide(notificationFragment!!)
         }
     }
 
@@ -112,6 +131,9 @@ class MainActivity : BaseActivity() {
                 if (binding.navigationBar.ivCommunity.isSelected)
                     EventBus.getDefault().post(RefreshEvent(CommunityFragment::class.java)
                 )
+            }
+            2 -> {
+                if (binding.navigationBar.ivNotification.isSelected) EventBus.getDefault().post(RefreshEvent(NotificationFragment::class.java))
             }
         }
     }

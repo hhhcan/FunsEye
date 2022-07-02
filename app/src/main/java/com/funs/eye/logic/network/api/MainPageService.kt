@@ -1,9 +1,6 @@
 package com.funs.eye.logic.network.api
 
-import com.funs.eye.logic.model.CommunityRecommend
-import com.funs.eye.logic.model.Daily
-import com.funs.eye.logic.model.Discovery
-import com.funs.eye.logic.model.Follow
+import com.funs.eye.logic.model.*
 import com.funs.eye.logic.network.ServiceCreator
 import retrofit2.http.GET
 import retrofit2.http.Url
@@ -40,11 +37,10 @@ interface MainPageService {
     suspend fun gethFollow(@Url url: String): Follow
 
     /**
-     * 搜索-热搜关键词
+     * 通知-推送列表
      */
-    @GET("api/v3/queries/hot")
-    suspend fun getHotSearch(): List<String>
-
+    @GET
+    suspend fun getPushMessage(@Url url: String): PushMessage
 
     companion object {
 
@@ -67,6 +63,11 @@ interface MainPageService {
          * 社区-关注列表
          */
         const val FOLLOW_URL = "${ServiceCreator.BASE_URL}api/v6/community/tab/follow"
+
+        /**
+         * 通知-推送列表
+         */
+        const val PUSHMESSAGE_URL = "${ServiceCreator.BASE_URL}api/v3/messages"
 
     }
 

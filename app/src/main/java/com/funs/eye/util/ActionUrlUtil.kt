@@ -9,6 +9,8 @@ import com.funs.eye.event.SwitchPagesEvent
 import com.funs.eye.extension.showToast
 import com.funs.eye.ui.common.ui.BaseFragment
 import com.funs.eye.ui.home.daily.DailyFragment
+import com.funs.eye.ui.newdetail.NewDetailActivity
+import com.funs.eye.ui.notification.push.PushFragment
 import org.greenrobot.eventbus.EventBus
 import java.net.URLDecoder
 
@@ -65,14 +67,14 @@ object ActionUrlUtil {
                 "${toastTitle},${GlobalUtil.getString(R.string.currently_not_supported)}".showToast()
             }
             decodeUrl.startsWith(Const.ActionUrl.HP_NOTIFI_TAB_ZERO) -> {
-//                EventBus.getDefault().post(SwitchPagesEvent(PushFragment::class.java))
-//                EventBus.getDefault().post(RefreshEvent(PushFragment::class.java))
+                EventBus.getDefault().post(SwitchPagesEvent(PushFragment::class.java))
+                EventBus.getDefault().post(RefreshEvent(PushFragment::class.java))
             }
             decodeUrl.startsWith(Const.ActionUrl.TOPIC_DETAIL) -> {
                 "${toastTitle},${GlobalUtil.getString(R.string.currently_not_supported)}".showToast()
             }
             decodeUrl.startsWith(Const.ActionUrl.DETAIL) -> {
-//                getConversionVideoId(actionUrl)?.run { NewDetailActivity.start(activity, this) }
+                getConversionVideoId(actionUrl)?.run { NewDetailActivity.start(activity, this) }
             }
             else -> {
                 "${toastTitle},${GlobalUtil.getString(R.string.currently_not_supported)}".showToast()

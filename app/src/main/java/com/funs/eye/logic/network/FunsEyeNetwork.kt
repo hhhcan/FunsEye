@@ -15,8 +15,6 @@ class FunsEyeNetwork {
 
     private val videoService = ServiceCreator.create(VideoService::class.java)
 
-    suspend fun fetchHotSearch() = mainPageService.getHotSearch()
-
     suspend fun fetchVideoBeanForClient(videoId: Long) = videoService.getVideoBeanForClient(videoId)
 
     suspend fun fetchVideoRelated(videoId: Long) = videoService.getVideoRelated(videoId)
