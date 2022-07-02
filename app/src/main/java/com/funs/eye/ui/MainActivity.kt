@@ -10,6 +10,7 @@ import com.funs.eye.extension.setOnClickListener
 import com.funs.eye.extension.showToast
 import com.funs.eye.ui.common.ui.BaseActivity
 import com.funs.eye.ui.community.CommunityFragment
+import com.funs.eye.ui.home.HomePageFragment
 import com.funs.eye.util.GlobalUtil
 import org.greenrobot.eventbus.EventBus
 
@@ -21,6 +22,8 @@ class MainActivity : BaseActivity() {
         get() = _binding!!
 
     private var backPressTime = 0L
+
+    private var homePageFragment: HomePageFragment? = null
 
     private var communityFragment: CommunityFragment? = null
 
@@ -38,8 +41,12 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupViews() {
-        setOnClickListener(binding.navigationBar.btnCommunity) {
+        setOnClickListener(binding.navigationBar.btnHomePage,binding.navigationBar.btnCommunity) {
             when (this) {
+                binding.navigationBar.btnHomePage->{
+                    notificationUiRefresh(0)
+                    setTabSelection(0)
+                }
                 binding.navigationBar.btnCommunity -> {
                     notificationUiRefresh(1)
                     setTabSelection(1)
@@ -54,6 +61,16 @@ class MainActivity : BaseActivity() {
         fragmentManager.beginTransaction().apply {
             hideFragments(this)
             when (index) {
+                0 -> {
+                    binding.navigationBar.ivHomePage.isSelected = true
+                    binding.navigationBar.tvHomePage.isSelected = true
+                    if (homePageFragment == null) {
+                        homePageFragment = HomePageFragment.newInstance()
+                        add(R.id.homeActivityFragContainer, homePageFragment!!)
+                    } else {
+                        show(homePageFragment!!)
+                    }
+                }
                 1 -> {
                     binding.navigationBar.ivCommunity.isSelected = true
                     binding.navigationBar.tvCommunity.isSelected = true
@@ -81,6 +98,7 @@ class MainActivity : BaseActivity() {
 
     private fun hideFragments(transaction: FragmentTransaction) {
         transaction.run {
+            if (homePageFragment != null) hide(homePageFragment!!)
             if (communityFragment != null) hide(communityFragment!!)
         }
     }
