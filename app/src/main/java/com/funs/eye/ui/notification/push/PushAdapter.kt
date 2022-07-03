@@ -28,7 +28,7 @@ class PushAdapter(val fragment: PushFragment) : PagingDataAdapter<PushMessage.Me
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         getItem(position)?.run {
-            holder.ivAvatar.load(icon ?: "") { error(R.mipmap.ic_launcher) }
+            holder.ivAvatar.load(icon ?: "") { error(R.mipmap.icon_launcher) }
             holder.tvTitle.text = title
             holder.tvTime.text = DateUtil.getConvertedDate(date)
             holder.tvContent.text = content
