@@ -2,6 +2,7 @@
 package com.funs.eye.extension
 
 import android.graphics.drawable.Drawable
+import android.text.Html
 import android.widget.TextView
 
 /**
@@ -44,4 +45,8 @@ fun TextView.setDrawables(lDrawable: Drawable?, rDrawable: Drawable?, lIconWidth
         rDrawable?.setBounds(0, 0, dp2px(rIconWidth), dp2px(rIconHeight))
     }
     setCompoundDrawables(lDrawable, null, rDrawable, null)
+}
+
+fun TextView.setTextViewUnderline(underlineString: String) {
+    text = Html.fromHtml("<u>$underlineString</u>")
 }

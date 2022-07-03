@@ -15,7 +15,7 @@ import com.funs.eye.R
 import com.funs.eye.databinding.ActivityNewDetailBinding
 import com.funs.eye.extension.*
 import com.funs.eye.logic.VideoRepository
-import com.funs.eye.logic.dao.EyepetizerDatabase
+import com.funs.eye.logic.dao.FunsEyeDatabase
 import com.funs.eye.logic.model.Author
 import com.funs.eye.logic.model.Consumption
 import com.funs.eye.logic.model.Cover
@@ -48,7 +48,7 @@ class NewDetailActivity : BaseActivity() {
         ViewModelProvider(
             this, NewDetailViewModelFactory(
                 VideoRepository.getInstance(
-                    EyepetizerDatabase.getVideoDao(),
+                    FunsEyeDatabase.getVideoDao(),
                     FunsEyeNetwork.getInstance()
                 )
             )

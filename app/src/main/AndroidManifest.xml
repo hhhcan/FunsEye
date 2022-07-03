@@ -23,11 +23,6 @@
         tools:ignore="UnusedAttribute"
         tools:replace="android:allowBackup">
 
-<!--Android 6.0不再支持 Apache HTTP client， 建议使用 HttpURLConnection 代替 -->
-<!--        <uses-library-->
-<!--            android:name="org.apache.http.legacy"-->
-<!--            android:required="false" />-->
-
         <!-- 关于全面屏与刘海，状态栏配置相关 -->
         <meta-data
             android:name="android.max_aspect"
