@@ -65,6 +65,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
             android:launchMode="singleTop" />
 
+        <activity android:name=".ui.common.ui.WebViewActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

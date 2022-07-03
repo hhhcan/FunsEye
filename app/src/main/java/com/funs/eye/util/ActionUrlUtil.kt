@@ -8,6 +8,7 @@ import com.funs.eye.event.RefreshEvent
 import com.funs.eye.event.SwitchPagesEvent
 import com.funs.eye.extension.showToast
 import com.funs.eye.ui.common.ui.BaseFragment
+import com.funs.eye.ui.common.ui.WebViewActivity
 import com.funs.eye.ui.home.daily.DailyFragment
 import com.funs.eye.ui.newdetail.NewDetailActivity
 import com.funs.eye.ui.notification.push.PushFragment
@@ -43,7 +44,7 @@ object ActionUrlUtil {
         val decodeUrl = URLDecoder.decode(actionUrl, "UTF-8")
         when {
             decodeUrl.startsWith(Const.ActionUrl.WEBVIEW) -> {
-//                WebViewActivity.start(activity, decodeUrl.getWebViewInfo().first(), decodeUrl.getWebViewInfo().last())
+                WebViewActivity.start(activity, decodeUrl.getWebViewInfo().first(), decodeUrl.getWebViewInfo().last())
             }
             decodeUrl.startsWith(Const.ActionUrl.RANKLIST) -> {
                 "${toastTitle},${GlobalUtil.getString(R.string.currently_not_supported)}".showToast()

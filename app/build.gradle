@@ -118,7 +118,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.shuyu:GSYVideoPlayer:8.1.2'
-//    implementation 'com.tencent.sonic:sdk:3.1.0'
+    implementation 'com.tencent.sonic:sdk:3.1.0'
     implementation 'com.umeng.umsdk:common:9.3.8'
     implementation 'com.umeng.umsdk:asms:1.2.2'
 
