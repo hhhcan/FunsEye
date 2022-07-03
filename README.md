@@ -5,10 +5,10 @@
 
 ## 屏幕截图
 
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot1.jpg)
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot2.jpg)
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot3.jpg)
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot4.jpg)
+![image](screenshots/snapshot1.jpg)
+![image](screenshots/snapshot2.jpg)
+![image](screenshots/snapshot3.jpg)
+![image](screenshots/snapshot4.jpg)
 
 ## 主要功能
 - 首页--发现&日报板块观看优质高清短视频。
