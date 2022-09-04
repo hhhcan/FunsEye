@@ -3,12 +3,6 @@
 基于 [Kotlin]语言仿写开眼 Eyepetizer的一个短视频 Android 客户端项目，
 采用 [Jetpack]+ [协程]实现的 MVVM 架构。
 
-## 屏幕截图
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot1.jpg)
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot2.jpg)
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot3.jpg)
-![image](https://github.com/hhhcan/FunsEye/blob/master/screenshots/snapshot4.jpg)
-
 ## 主要功能
 - 首页--发现&日报板块观看优质高清短视频。
 - 社区--浏览社区图文与视频创作。
