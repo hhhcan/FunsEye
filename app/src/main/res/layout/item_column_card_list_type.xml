@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:orientation="vertical"
-    android:paddingHorizontal="@dimen/listSpaceSize">
+    android:paddingHorizontal="@dimen/dp_14">
 
     <com.funs.eye.ui.common.view.TypefaceTextView
         android:id="@+id/tvTitle"

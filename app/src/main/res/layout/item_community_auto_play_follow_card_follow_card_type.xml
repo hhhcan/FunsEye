@@ -107,7 +107,7 @@
     <com.funs.eye.ui.common.view.AutoPlayerVideoPlayer
         android:id="@+id/videoPlayer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/coverSize"
+        android:layout_height="@dimen/dp_183"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
         app:layout_constraintEnd_toEndOf="parent"

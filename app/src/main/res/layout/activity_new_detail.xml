@@ -18,7 +18,7 @@
     <com.funs.eye.ui.newdetail.NewDetailVideoPlayer
         android:id="@+id/videoPlayer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/videoPlayerSize" />
+        android:layout_height="@dimen/dp_202" />
 
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"

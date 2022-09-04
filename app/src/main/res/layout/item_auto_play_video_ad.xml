@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingHorizontal="@dimen/listSpaceSize">
+    android:paddingHorizontal="@dimen/dp_14">
 
     <com.funs.eye.ui.common.view.AutoPlayerVideoPlayer
         android:id="@+id/videoPlayer"

@@ -136,7 +136,7 @@ class DiscoveryAdapter(val fragment: DiscoveryFragment) :
                 holder.bannerViewPager.run {
                     setCanLoop(false)
                     setRoundCorner(dp2px(4f))
-                    setRevealWidth(GlobalUtil.getDimension(R.dimen.listSpaceSize))
+                    setRevealWidth(GlobalUtil.getDimension(R.dimen.dp_14))
                     if (item.data.itemList.size == 1) setPageMargin(0) else setPageMargin(dp2px(4f))
                     setIndicatorVisibility(View.GONE)
                     adapter = HorizontalScrollCardAdapter()

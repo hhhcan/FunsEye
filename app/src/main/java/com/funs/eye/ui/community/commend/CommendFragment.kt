@@ -38,7 +38,7 @@ class CommendFragment : BaseFragment() {
     /**
      * 列表左or右间距
      */
-    val bothSideSpace = GlobalUtil.getDimension(R.dimen.listSpaceSize)
+    val bothSideSpace = GlobalUtil.getDimension(R.dimen.dp_14)
 
     /**
      * 列表中间内间距，左or右。

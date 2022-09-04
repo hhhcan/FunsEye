@@ -5,6 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.funs.eye.R
 import com.funs.eye.databinding.FragmentMineBinding
 import com.funs.eye.extension.setOnClickListener
@@ -44,6 +48,13 @@ class MineFragment : BaseFragment() {
                 R.color.black
             )
         )
+        binding.ivPersonDataAvatar.let {
+            Glide.with(this)
+                .load(R.drawable.ic_avtar)
+                .transform(MultiTransformation(CenterCrop(), CircleCrop()))
+                .into(it)
+        }
+
         binding.tvBlog.setTextViewUnderline(GlobalUtil.getString(R.string.blog));
         binding.tvGithub.setTextViewUnderline(GlobalUtil.getString(R.string.github));
 

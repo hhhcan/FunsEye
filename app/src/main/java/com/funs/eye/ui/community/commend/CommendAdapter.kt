@@ -112,7 +112,7 @@ class CommendAdapter(private val fragment: CommendFragment) :
                 holder.bannerViewPager.run {
                     setCanLoop(false)
                     setRoundCorner(dp2px(4f))
-                    setRevealWidth(0, GlobalUtil.getDimension(R.dimen.listSpaceSize))
+                    setRevealWidth(0, GlobalUtil.getDimension(R.dimen.dp_14))
                     if (item.data.itemList.size == 1) setPageMargin(0) else setPageMargin(dp2px(4f))
                     setIndicatorVisibility(View.GONE)
                     removeDefaultPageTransformer()

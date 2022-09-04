@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="53dp"
-    android:paddingHorizontal="@dimen/listSpaceSize"
+    android:paddingHorizontal="@dimen/dp_14"
     tools:visibility="visible">
 
     <com.funs.eye.ui.common.view.TypefaceTextView

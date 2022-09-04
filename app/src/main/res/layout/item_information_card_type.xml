@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingHorizontal="@dimen/listSpaceSize">
+    android:paddingHorizontal="@dimen/dp_14">
 
     <ImageView
         android:id="@+id/ivCover"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/coverSize"
+        android:layout_height="@dimen/dp_183"
         android:scaleType="fitXY"
         tools:src="@color/blackAlpha50" />
 

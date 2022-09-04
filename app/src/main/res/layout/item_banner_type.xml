@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingHorizontal="@dimen/listSpaceSize">
+    android:paddingHorizontal="@dimen/dp_14">
 
     <ImageView
         android:id="@+id/ivPicture"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/gray"
-        android:paddingEnd="@dimen/listSpaceSize" />
+        android:paddingEnd="@dimen/dp_14" />
 
 </LinearLayout>
 
